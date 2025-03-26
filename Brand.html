@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        /* General Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #333;
+            color:orangered;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+        }
+
+        /* Responsive Navbar for Mobile */
+        @media screen and (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #333;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li {
+                padding: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav.active {
+                display: flex;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background-color: #f4f4f4;
+        }
+
+        .hero img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .service-item {
+            background-color: #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .service-item img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+        }
+        /* .service-item span {
+    font-weight: bold;
+/* } */not used */
+
+        /* Events */
+        .events {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .event-list {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .event-item {
+            background-color: #eee;
+            padding: 15px;
+            min-width: 300px;
+            border-radius: 5px;
+            scroll-snap-align: start;
+        }
+
+        .event-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            text-align: center;
+            padding: 40px;
+            background-color: #333;
+            color: white;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            width: 60%;
+            margin: 10px 0;
+        }
+
+        .newsletter button {
+            padding: 10px 20px;
+            background-color: #555;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">BrandElite</div>
+        <button class="menu-toggle">&#9776;</button>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero" id="home">
+        <h1>Enterprise Marketing and Customer Experience</h1>
+        <p>Leverage data to drive personalization at scale</p>
+        <img src="jpg\Businessmen point.jpg" alt="Hero Image">
+        <button>Explore</button>
+    </section>
+    
+    <section class="company-services" id="services">
+        <h2>Company Services</h2>
+        <div class="services-grid">
+            <div class="service-item"><img src="jpg\customer service_.jpg" alt="Service 1">Customer Experience Enhance engagement with personalized interactions.           
+                Deliver exceptional service across all touchpoints.</div>
+            <div class="service-item"><img src="jpg\Effective Networking Strategies.jpg" alt="Service 2">Co-commercialization Partnering to drive market success and expand reach. Unlock growth through collaborative strategies.</div>
+            <div class="service-item"><img src="jpg\Data Analytics.jpg" alt="Service 3">Data and Analytics  Transform raw data into actionable insights. Make informed decisions with real-time analytics.</div>
+            <div class="service-item"><img src="jpg\R&D.jpg" alt="Service 4">R&D / Medical Transformation   Accelerate innovation in healthcare solutions.</div>
+            <div class="service-item"><img src="jpg\Digital Transformation Services in USA.jpg" alt="Service 5">Digital Transformation  Modernize operations with cutting-edge technology  Streamline workflows for efficiency and agility.</div>
+            <div class="service-item"><img src="jpg\SaaS ERP .jpg" alt="Service 6">Omnipresence CXM Platform  Deliver seamless customer experiences across all channels</div>
+        </div>
+    </section>
+    
+    <section class="events" id="events">
+        <h2>Upcoming Events</h2>
+        <div class="event-list">
+            <div class="event-item"><img src="jpg\Designteam.jpg" alt="Event 1">Global Pharmaceutical Regulatory Affairs Summit</div>
+            <div class="event-item"><img src="jpg\Rethinking Global Development Strategies.jpg" alt="Event 2">World Drug Safety Congress Europe</div>
+            <div class="event-item"><img src="jpg\Analyst Examining Data on Futuristic Dashboard Interface.jpg" alt="Event 3">Real World Data and Analytics Centers of Excellence</div>
+        </div>
+    </section>
+    
+    <section class="newsletter">
+        <h2>Newsletter</h2>
+        <input type="email" id="email" placeholder="Enter email address">
+        <button onclick="validateEmail()">Subscribe</button>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Indegene. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const nav = document.querySelector("nav");
+
+            menuToggle.addEventListener("click", function () {
+                nav.classList.toggle("active");
+            });
+        });
+    </script>
+</body>
+</html>
